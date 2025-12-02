@@ -2,21 +2,21 @@ numbers = []
 sum = 0
 count = 0
 
-entry = input('Enter a number: ')
-
-while entry != 'done':
-    try:
-        num = int(entry)
-        numbers.append(num)
-    except ValueError:
-        print('Invalid Input!')
-    
+while True :
     entry = input('Enter a number: ')
+    if entry == 'done' :
+        break
+    try :
+        num = int(entry)
+    except ValueError :
+        print('Invalid Input!')
+        continue
 
-for i in numbers :
-    sum += i
+    sum += num
     count += 1
-
+    numbers.append(num)
+   
 avg = sum / count
 
 print(sum, count, avg)
+print(numbers)
