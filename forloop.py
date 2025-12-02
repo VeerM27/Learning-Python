@@ -9,4 +9,4 @@ for i in numbers :
     count += 1
 
 print('The largest number is ', largest_num)
-print('Number of entries', count)
+print(largest_num, 'was the largest out of the', count, 'entries.' )
