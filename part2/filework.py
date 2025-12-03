@@ -6,9 +6,6 @@ except :
     print('File not found!')
     quit()
 
-count = 0
 for line in fhand :
-    if line.startswith('Subject:') :
-        count += 1
-
-print(count)
+    line = line.upper()
+    print(line, end=" ")
