@@ -8,4 +8,5 @@ except :
 
 for line in fhand :
     line = line.upper()
-    print(line, end=" ")
+    lines = line.rstrip()
+    print(lines)
