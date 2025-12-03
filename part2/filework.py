@@ -8,12 +8,7 @@ except :
 
 count = 0
 for line in fhand :
-    count += 1
+    if line.startswith('Subject:') :
+        count += 1
 
 print(count)
-
-fhand.seek(0)
-
-content = fhand.read()
-
-print(len(content))
