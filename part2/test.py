@@ -6,13 +6,9 @@ except :
     print('File not found!')
     quit()
 
-entries = []
-
 for line in fhand :
-    if line.startswith('Author') :
-        lines = line.rstrip()
-        entries.append(lines)
-
-for i in entries :
-    pos = i.find("@")
-    print(i[pos+1:])
+    line = line.rstrip()
+    words = line.split()
+    if len(words) < 3 or words[0] != 'From' :
+        continue
+    print(words[1])
