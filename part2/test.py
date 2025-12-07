@@ -6,9 +6,17 @@ except :
     print('File not found!')
     quit()
 
+entries = []
+
 for line in fhand :
     line = line.rstrip()
-    words = line.split()
-    if len(words) < 3 or words[0] != 'From' :
+    if line.startswith('X-DSPAM-Confidence:') :
+        words = line.split()
+        entries.append(float(words[1]))
+    else : 
         continue
-    print(words[1])
+
+total = sum(entries)
+
+print(entries)
+[print(total)]
