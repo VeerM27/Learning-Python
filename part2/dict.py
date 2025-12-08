@@ -1,4 +1,3 @@
-counts = dict()
 fname = input('Enter filename: ')
 
 try:
@@ -7,12 +6,11 @@ except :
     print('File not found!')
     quit()
 
+counts = dict()
 for line in fhand :
-    line = line.rstrip()
     words = line.split()
-
-for word in words :
-    counts[word] = counts.get(word, 0) + 1
+    for word in words :
+        counts[word] = counts.get(word, 0) + 1
 
 bigWord = None
 bigCount = None
@@ -21,6 +19,6 @@ for word,count in counts.items() :
         bigWord = word
         bigCount = count
 
-print(counts)
+print('\n', counts)
 print('\nCounting...')
-print('\nThe most common word is:', bigWord, 'with', bigCount, 'occurrences.')
+print('\nThe most common word is:', bigWord, 'with', bigCount, 'occurrences.\n')
